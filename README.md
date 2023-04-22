@@ -1,12 +1,20 @@
-# ypis-fe
+# Yummy Product Infromation System
 
-This template should help get you started developing with Vue 3 in Vite.
+## Frontend
 
-## Recommended IDE Setup
+## System setup
+Install nvm
+`https://github.com/nvm-sh/nvm/blob/master/README.md#installing-and-updating`
+Use the correct node version
+```sh
+npm use
+```
+
+### Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-## Type Support for `.vue` Imports in TS
+### Type Support for `.vue` Imports in TS
 
 TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
 
@@ -17,7 +25,7 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
     2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
 2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
 
-## Customize configuration
+### Customize configuration
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
@@ -66,3 +74,9 @@ npm run test:e2e
 ```sh
 npm run lint
 ```
+
+## Contibute
+### Add new page
+1. Create the component in `src/views/<Page>View.vue` 
+2. Register the page to the route `src/router/index.ts`
+3. Add to navigation in `src/App.vue`

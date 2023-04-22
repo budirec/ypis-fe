@@ -14,8 +14,8 @@ export default {
   props: {
     icon: {
       type: Object,
-      default: null
-    }
-  }
-}
+      default: null,
+    },
+  },
+};
 </script>
