@@ -31,7 +31,9 @@ const toggleDark = useToggle(isDark);
     <div class="main">
       <aside class="menu">
         <el-menu :default-active="$route.path" router>
-          <el-menu-item index="/home">Home</el-menu-item>
+          <el-menu-item index="/">Home</el-menu-item>
+          <el-menu-item index="/incubator">incubator</el-menu-item>
+          <el-menu-item index="/productions">Productions</el-menu-item>
           <el-menu-item index="/about">About</el-menu-item>
         </el-menu>
       </aside>
