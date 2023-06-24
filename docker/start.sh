@@ -14,4 +14,5 @@ if [ ! -d "dist" ]; then
     npm run build
 fi
 
-nginx -g "daemon off;"
+nginx
+npm run dev
