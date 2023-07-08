@@ -1,22 +1,11 @@
-enum RequetMethod {
-    DELETE = 'DELETE',
-    GET = 'GET',
-    POST = 'POST',
-    PUT = 'PUT',
-}
+import { fetchWrapper, type FetchOptions, HTTP_POST } from "@/util/FetchWrapper";
 
 class BaseApiService {
     baseUrl = "/api/";
 
-    async call(url: string, config = {}) {
+    async call(url: string, config: FetchOptions) {
         try {
-            const response = await fetch(this.baseUrl + url, config);
-            if (!response.ok) {
-                throw new Error("Network response was not OK");
-            }
-            const content = await response.json();
-            if (!content) return response.blob();
-            return content;
+            return await fetchWrapper(this.baseUrl + url, config);
         } catch (err) {
             this.handleErrors(err);
         }
@@ -37,7 +26,7 @@ export type itemAttribute = {
 class ItemsApiService extends BaseApiService {
     async create(attr: itemAttribute) {
         return await super.call('item', {
-            method: RequetMethod.POST,
+            method: HTTP_POST,
             body: JSON.stringify(attr),
             headers: {
                 "Content-Type": "application/json",
